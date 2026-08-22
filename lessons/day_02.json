@@ -1,0 +1,9 @@
+{
+  "id": "day_02",
+  "title": "Ein Paket für die Nachbarin",
+  "status": "planned",
+  "question": "Was ist gestern mit dem Paket passiert?",
+  "target_model": "Gestern habe ich ein Paket angenommen.",
+  "rule": "Предложение начинается с Gestern; спрягаемый глагол стоит на втором месте, подлежащее — после глагола.",
+  "note": "Сохранённый прежний тестовый урок. Будет полностью оформлен после Дня 1."
+}
