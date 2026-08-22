@@ -1,0 +1,19 @@
+{
+  "id": "day_01",
+  "title": "Sind Sie neu hier?",
+  "intro_text": "<b>Tag 1. Sind Sie neu hier?</b>\n\nSehen Sie sich den Dialog an.",
+  "phrases_text": "<b>Wichtige Sätze aus dem Dialog</b>\n\n<b>Sind Sie neu hier?</b> — Вы здесь недавно?\n\n<b>Wir sind vor einer Woche eingezogen.</b> — Мы переехали неделю назад.\n\n<b>Ich wohne direkt über Ihnen.</b> — Я живу прямо над вами.\n\n<b>Wir müssen uns noch ein bisschen einleben.</b> — Нам ещё нужно немного освоиться.\n\n<b>Klingeln Sie einfach.</b> — Просто позвоните в дверь.",
+  "grammar_text": "<b>Noch eine wichtige Konstruktion</b>\n\n<b>Ich lebe seit drei Monaten in Deutschland.</b>\n\nЯ живу в Германии уже три месяца.\n\nПосле <b>seit</b> используем настоящее время, если действие началось в прошлом и продолжается сейчас:\n\n<b>seit + Präsens</b>\n\n<b>Ich lebe seit drei Monaten in Deutschland.</b>",
+  "quiz": {
+    "question": "Wo wohnt Frau Berger?",
+    "correct_text": "<b>Richtig! Frau Berger wohnt direkt über Sayana.</b>",
+    "wrong_text": "Noch nicht ganz. Frau Berger sagt:\n\n<b>„Ich wohne direkt über Ihnen.“</b>\n\nVersuchen Sie es noch einmal."
+  },
+  "voice_task_text": "<b>Jetzt sind Sie dran!</b>\n\nПредставьтесь новой соседке. Расскажите:\n\n1. как вас зовут;\n2. откуда вы приехали;\n3. как давно живёте в Германии;\n4. скажите, что вам ещё нужно немного освоиться.\n\nМожно отвечать от имени вымышленного персонажа.\n\n<b>Опора:</b>\n\nGuten Tag, ich heiße …\nIch komme aus …\nIch lebe seit … in Deutschland.\nIch muss mich noch ein bisschen einleben.\n\nЗапишите голосовое сообщение. Минимум — четыре предложения.",
+  "default_repeat_phrase": "Ich lebe seit drei Monaten in Deutschland.",
+  "feedback_prompt": "Уровень: A2\n\nГолосовое задание:\nПредставиться новой соседке и сообщить четыре мысли: имя, страна происхождения, как давно человек живёт в Германии, а также что ему ещё нужно немного освоиться.\n\nКритерии проверки:\n1. В ответе выражены все четыре мысли.\n2. Используется seit + Präsens для продолжающейся ситуации: Ich lebe seit drei Monaten in Deutschland.\n3. Порядок слов понятный и естественный.\n4. Минимум четыре предложения или четыре ясно отделимые мысли. Отсутствие точек в расшифровке SpeechKit не считать ошибкой.\n\nДопустимы естественные варианты, например: Ich heiße ..., Mein Name ist ..., Ich komme aus ..., Ich bin aus ..., Ich wohne seit ... in Deutschland, Ich lebe seit ... in Deutschland, Ich muss mich noch ein bisschen einleben. Не требуй дословного совпадения с опорой. Проверяй только эти критерии и не исправляй посторонние мелкие ошибки.\n\nЕсли ответ принят, выбери для повторения одно короткое предложение из естественного варианта ответа, предпочтительно с seit. Сохрани названный человеком срок.\n\nРасшифрованный ответ:\n{student_answer}",
+  "media": {
+    "video": "media/day_01/video.mp4",
+    "voice_task": "media/day_01/voice_task.mp3"
+  }
+}
