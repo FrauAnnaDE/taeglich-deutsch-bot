@@ -215,9 +215,9 @@ def main_keyboard() -> InlineKeyboardMarkup:
 def quiz_keyboard() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         inline_keyboard=[
-            [InlineKeyboardButton(text="Unter Sayana", callback_data="day1_quiz_under")],
-            [InlineKeyboardButton(text="Über Sayana", callback_data="day1_quiz_over")],
-            [InlineKeyboardButton(text="Im Nachbarhaus", callback_data="day1_quiz_house")],
+            [InlineKeyboardButton(text="Под Саяной", callback_data="day1_quiz_under")],
+            [InlineKeyboardButton(text="Над Саяной", callback_data="day1_quiz_over")],
+            [InlineKeyboardButton(text="В соседнем доме", callback_data="day1_quiz_house")],
         ]
     )
 
@@ -266,7 +266,7 @@ async def day1_start(callback: CallbackQuery) -> None:
     await callback.message.answer(DAY_1["intro_text"])
     await callback.message.answer_video(
         video=FSInputFile(video_path),
-        reply_markup=one_button("Wichtige Sätze", "day1_phrases"),
+        reply_markup=one_button("Важные фразы", "day1_phrases"),
     )
 
 
@@ -277,7 +277,7 @@ async def day1_phrases(callback: CallbackQuery) -> None:
         progress_for(callback.from_user.id).stage = "phrases"
         await callback.message.answer(
             DAY_1["phrases_text"],
-            reply_markup=one_button("Weiter", "day1_grammar"),
+            reply_markup=one_button("Продолжить", "day1_grammar"),
         )
 
 
@@ -288,7 +288,7 @@ async def day1_grammar(callback: CallbackQuery) -> None:
         progress_for(callback.from_user.id).stage = "grammar"
         await callback.message.answer(
             DAY_1["grammar_text"],
-            reply_markup=one_button("Zur Frage", "day1_quiz"),
+            reply_markup=one_button("Перейти к вопросу", "day1_quiz"),
         )
 
 
@@ -321,7 +321,7 @@ async def send_voice_task(message: Message, user_id: int) -> None:
     await message.answer_audio(
         audio=FSInputFile(audio_path),
         caption=DAY_1["voice_task_text"],
-        title="Tag 1 — голосовое задание",
+        title="День 1 — голосовое задание",
     )
 
 
@@ -329,7 +329,19 @@ async def send_voice_task(message: Message, user_id: int) -> None:
 async def day1_quiz_correct(callback: CallbackQuery) -> None:
     await callback.answer()
     if callback.message and callback.from_user:
-        await callback.message.answer(DAY_1["quiz"]["correct_text"])
+        progress_for(callback.from_user.id).stage = "quiz_correct"
+        await callback.message.answer(
+            DAY_1["quiz"]["correct_text"],
+            reply_markup=one_button(
+                "Перейти к заданию", "day1_voice_task"
+            ),
+        )
+
+
+@router.callback_query(F.data == "day1_voice_task")
+async def day1_voice_task(callback: CallbackQuery) -> None:
+    await callback.answer()
+    if callback.message and callback.from_user:
         await send_voice_task(callback.message, callback.from_user.id)
 
 
@@ -397,7 +409,7 @@ async def process_main_answer(
         progress.repeat_phrase = repeat_phrase
         await status.edit_text(
             f"{result['feedback']}\n\n"
-            f"<b>Wiederholen Sie bitte:</b>\n{repeat_phrase}"
+            f"<b>Повторите, пожалуйста:</b>\n{repeat_phrase}"
         )
     except Exception as error:
         logger.exception("Feedback generation failed")
@@ -417,7 +429,7 @@ async def process_repeat(
     if repeat_is_correct(recognized_text, progress.repeat_phrase):
         progress.stage = "done"
         await message.answer(
-            "<b>Sehr gut! Tag 1 ist geschafft.</b>\n\nBis morgen!"
+            "<b>Отлично! День 1 пройден.</b>\n\nДо завтра!"
         )
         return
     await message.answer(
