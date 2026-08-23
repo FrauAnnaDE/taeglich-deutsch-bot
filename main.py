@@ -408,8 +408,9 @@ async def process_main_answer(
         progress.stage = "repeat"
         progress.repeat_phrase = repeat_phrase
         await status.edit_text(
-            f"{result['feedback']}\n\n"
-            f"<b>Повторите, пожалуйста:</b>\n{repeat_phrase}"
+            "<b>Отлично! Ответ принят.</b>\n\n"
+            "И последний шаг — повторите ключевую фразу отдельно:\n\n"
+            f"<b>{repeat_phrase}</b>"
         )
     except Exception as error:
         logger.exception("Feedback generation failed")
