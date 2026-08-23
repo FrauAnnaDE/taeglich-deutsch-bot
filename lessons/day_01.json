@@ -7,7 +7,7 @@
   "quiz": {
     "question": "Wo wohnt Frau Berger?",
     "correct_text": "<b>Правильно! Фрау Бергер живёт прямо над Саяной.</b>",
-    "wrong_text": "Пока не совсем. Фрау Бергер говорит:\n\n<b>„Ich wohne direkt über Ihnen.“</b>\n\nПопробуйте ещё раз."
+    "wrong_text": "Не совсем верно. Фрау Бергер говорит:\n\n<b>„Ich wohne direkt über Ihnen.“</b>\n\nПопробуйте ещё раз."
   },
   "voice_task_text": "<b>Теперь ваша очередь!</b>\n\nПредставьтесь новой соседке. Расскажите:\n\n1. как вас зовут;\n2. откуда вы приехали;\n3. как давно живёте в Германии;\n4. скажите, что вам ещё нужно немного освоиться.\n\nМожно отвечать от имени вымышленного персонажа.\n\n<b>Опора:</b>\n\nGuten Tag, ich heiße …\nIch komme aus …\nIch lebe seit … in Deutschland.\nIch muss mich noch ein bisschen einleben.\n\nЗапишите голосовое сообщение. Минимум — четыре предложения.",
   "default_repeat_phrase": "Ich lebe seit drei Monaten in Deutschland.",
